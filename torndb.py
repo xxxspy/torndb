@@ -140,6 +140,8 @@ class Connection(object):
         try:
             self._execute(cursor, query, parameters)
             return cursor.lastrowid
+        except:
+            raise
         finally:
             cursor.close()
 
